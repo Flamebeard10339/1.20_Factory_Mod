@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ee ",
+    "ee ",
+    "   "
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "crackedtorio:iron_plate",
+    "count": 1
+  }
+}

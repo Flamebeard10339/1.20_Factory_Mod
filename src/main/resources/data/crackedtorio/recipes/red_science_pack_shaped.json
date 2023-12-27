@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "pgp",
+    "gpg",
+    "pgp"
+  ],
+  "key": {
+    "g": {
+      "item": "crackedtorio:copper_gear"
+    },
+    "p": {
+      "item": "crackedtorio:iron_plate"
+    }
+  },
+  "result": {
+    "item": "crackedtorio:red_science",
+    "count": 1
+  }
+}
