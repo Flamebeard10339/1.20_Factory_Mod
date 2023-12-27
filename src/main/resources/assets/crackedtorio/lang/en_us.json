@@ -1,7 +1,10 @@
 {
+  "itemGroup.crackedtorio": "Crackedtorio Tab 1",
+
   "item.crackedtorio.copper_gear": "Copper Gear",
   "item.crackedtorio.iron_plate": "Iron Plate",
   "item.crackedtorio.iron_grub": "Iron Grub",
   "item.crackedtorio.red_science": "Material Science",
+
   "block.crackedtorio.burner_miner": "Burner Miner"
 }

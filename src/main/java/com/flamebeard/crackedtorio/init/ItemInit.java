@@ -7,6 +7,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -14,6 +15,11 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Crackedtorio.MODID);
 
+    public static void register(IEventBus eventBus) {
+        ITEMS.register(eventBus);
+    }
+
+    // Items
     public static final RegistryObject<Item> COPPER_GEAR = ITEMS.register("copper_gear",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> IRON_PLATE = ITEMS.register("iron_plate",
@@ -28,6 +34,4 @@ public class ItemInit {
                     .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 100, 1), 1.0f)
                     .build())));
 
-    public static final RegistryObject<BlockItem> BURNER_MINER = ITEMS.register("burner_miner",
-            () -> new BlockItem(BlockInit.BURNER_MINER.get(), new Item.Properties()));
 }

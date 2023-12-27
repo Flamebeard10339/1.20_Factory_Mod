@@ -4,6 +4,8 @@ import com.flamebeard.crackedtorio.init.BlockInit;
 import com.flamebeard.crackedtorio.init.CreativeTabInit;
 import com.flamebeard.crackedtorio.init.ItemInit;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,14 +25,14 @@ public class Crackedtorio {
     public Crackedtorio() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ItemInit.register(bus);
+        BlockInit.register(bus);
+        CreativeTabInit.register(bus);
+
         bus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
         bus.addListener(this::addCreative);
-
-        ItemInit.ITEMS.register(bus);
-        BlockInit.BLOCKS.register(bus);
-        CreativeTabInit.TABS.register(bus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -38,7 +40,9 @@ public class Crackedtorio {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) { // How to add items to specific creative tabs
+            event.accept(ItemInit.COPPER_GEAR);
+        }
     }
 
     @SubscribeEvent
