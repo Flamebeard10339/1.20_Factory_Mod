@@ -1,11 +1,10 @@
 package com.flamebeard.crackedtorio.init;
 
 import com.flamebeard.crackedtorio.Crackedtorio;
-import net.minecraft.world.effect.MobEffect;
+import com.flamebeard.crackedtorio.item.MetalDetectorItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,6 +25,10 @@ public class ItemInit {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RED_SCIENCE = ITEMS.register("red_science",
             () -> new Item(new Item.Properties().stacksTo(16)));
+
+    // This is how you create an advanced item class.
+    public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
+            () -> new MetalDetectorItem(new Item.Properties().durability(100)));
     public static final RegistryObject<Item> IRON_GRUB = ITEMS.register("iron_grub",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(1)
