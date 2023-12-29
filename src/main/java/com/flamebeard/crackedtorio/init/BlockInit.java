@@ -1,11 +1,11 @@
 package com.flamebeard.crackedtorio.init;
 
 import com.flamebeard.crackedtorio.Crackedtorio;
+import com.flamebeard.crackedtorio.block.BurnerMinerBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SupportType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -33,8 +33,8 @@ public class BlockInit {
         return ItemInit.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    public static final RegistryObject<Block> BURNER_MINER = registerBlock("burner_miner",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.FURNACE)
+    public static final RegistryObject<BurnerMinerBlock> BURNER_MINER_BLOCK = registerBlock("burner_miner",
+            () -> new BurnerMinerBlock(BlockBehaviour.Properties.copy(Blocks.DROPPER)
                     .lightLevel(state -> 10)
                     .requiresCorrectToolForDrops()
                     .pushReaction(PushReaction.BLOCK)

@@ -1,5 +1,6 @@
 package com.flamebeard.crackedtorio;
 
+import com.flamebeard.crackedtorio.init.BlockEntityInit;
 import com.flamebeard.crackedtorio.init.BlockInit;
 import com.flamebeard.crackedtorio.init.CreativeTabInit;
 import com.flamebeard.crackedtorio.init.ItemInit;
@@ -28,6 +29,7 @@ public class Crackedtorio {
         ItemInit.register(bus);
         BlockInit.register(bus);
         CreativeTabInit.register(bus);
+        BlockEntityInit.register(bus);
 
         bus.addListener(this::commonSetup);
 

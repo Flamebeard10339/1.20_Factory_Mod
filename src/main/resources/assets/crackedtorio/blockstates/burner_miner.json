@@ -1,7 +1,8 @@
 {
   "variants": {
-    "": {
-      "model": "crackedtorio:block/burner_miner"
-    }
+    "facing=north": { "model": "crackedtorio:block/burner_miner" },
+    "facing=east": { "model": "crackedtorio:block/burner_miner", "y": 90 },
+    "facing=south": { "model": "crackedtorio:block/burner_miner", "y": 180 },
+    "facing=west": { "model": "crackedtorio:block/burner_miner", "y": 270 }
   }
 }
